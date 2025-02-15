@@ -3,18 +3,22 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Task;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\{
     Request,
     Response,
     JsonResponse
 };
 use App\Events\TaskCreated;
-
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class TaskController extends Controller
 {
+    use AuthorizesRequests;
     public function index():JsonResponse
     {
-        $tasks = Task::where('user_id', auth()->id())->get();
+        $tasks = Cache::remember('tasks.' . auth()->id(), 60, function () {
+          return Task::where('user_id', auth()->id())->get();
+        });
         return response()->json($tasks);
     }
 
@@ -52,6 +56,7 @@ class TaskController extends Controller
         ]);
 
         $task->update($validated);
+        Cache::forget('tasks.' . $task->user_id);
         return response()->json($task);
     }
 
