@@ -11,4 +11,7 @@
             @livewire('admin.send-notification')
         </div>
     </div>
+    <script>
+        window.userId = "{{ auth()->id() }}";
+    </script>
 </x-app-layout>
