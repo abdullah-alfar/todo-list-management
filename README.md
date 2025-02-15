@@ -17,139 +17,149 @@ A Laravel-based project for managing todo lists efficiently. This project includ
 
 Follow these steps to set up the project locally:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/todo-list-management.git
+### Step 1: Clone the Repository
 
-   
-2. : Navigate to the Project Directory
+```bash
+git clone https://github.com/abdullah-alfar/todo-list-management
+```
 
-Move into the project folder:
-bash
-Copy
+### Step 2: Navigate to the Project Directory
 
+```bash
 cd todo-list-management
+```
 
-Step 3: Install Composer Dependencies
+### Step 3: Install Composer Dependencies
 
-Install all the required PHP dependencies using Composer:
-bash
-Copy
-
+```bash
 composer install
+```
 
-Step 4: Set Up the Environment File
+### Step 4: Set Up the Environment File
 
-Copy the .env.example file to .env:
-bash
-Copy
+Copy the `.env.example` file to `.env`:
 
+```bash
 cp .env.example .env
+```
 
-Update the .env file with your database credentials and other environment variables:
-env
-Copy
+Update the `.env` file with your database credentials and other environment variables:
 
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=todo_list
 DB_USERNAME=root
 DB_PASSWORD=your_password
+```
 
-Step 5: Generate an Application Key
+### Step 5: Generate an Application Key
 
-Generate a unique application key for your project:
-bash
-Copy
-
+```bash
 php artisan key:generate
+```
 
-Step 6: Run Database Migrations
+### Step 6: Run Database Migrations
 
-Run the migrations to set up the database tables:
-bash
-Copy
-
+```bash
 php artisan migrate
+```
 
-Step 7: Install Laravel Reverb
+### Step 7: Install Laravel Reverb
 
-Install Laravel Reverb for real-time functionality:
-bash
-Copy
-
+```bash
 composer require laravel/reverb
+```
 
 Publish the Reverb configuration file:
-bash
-Copy
 
+```bash
 php artisan vendor:publish --tag=reverb-config
+```
 
-Step 8: Start the Reverb Server
+### Step 8: Start the Reverb Server
 
-Start the Reverb server to enable real-time features:
-bash
-Copy
-
+```bash
 php artisan reverb:start
+```
 
-Step 9: Start the Laravel Development Server
+### Step 9: Start the Laravel Development Server
 
-Start the Laravel development server:
-bash
-Copy
-
+```bash
 php artisan serve
+```
 
-Your application will now be running at http://127.0.0.1:8000.
-API Documentation
+Your application will now be running at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-API documentation is automatically generated using dedoc/scramble.
-Accessing the API Docs
+---
 
-    Start the Laravel development server (if not already running):
-    bash
-    Copy
+## API Documentation
 
-    php artisan serve
+API documentation is automatically generated using `dedoc/scramble`.
 
-    Visit the following link in your browser:
-    http://127.0.0.1:8000/docs/api
+### Accessing the API Docs
 
-JAM Video Walkthrough
+Ensure the Laravel development server is running:
+
+```bash
+php artisan serve
+```
+
+Then visit:
+
+[http://127.0.0.1:8000/docs/api](http://127.0.0.1:8000/docs/api)
+
+---
+
+## JAM Video Walkthrough
 
 For a detailed walkthrough of the project, including setup and functionality, check out the JAM video:
 
-JAM Video: Todo List Management
-Contributing
+**JAM Video: Todo List Management**
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+https://jam.dev/c/449db0ea-e977-4c4d-8b31-cf749fc8ae27
 
-    Fork the repository.
+---
 
-    Create a new branch for your feature or bugfix:
-    bash
-    Copy
+## Contributing
 
-    git checkout -b feature/your-feature-name
+Contributions are welcome! To contribute, follow these steps:
 
-    Commit your changes:
-    bash
-    Copy
-
-    git commit -m "Add your commit message here"
-
-    Push to the branch:
-    bash
-    Copy
-
-    git push origin feature/your-feature-name
-
-    Submit a pull request.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   
+   ```bash
+   git commit -m "Add your commit message here"
+   ```
+4. Push to the branch:
+   
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Submit a pull request.
 
 Please ensure your code follows the project's coding standards and includes appropriate tests.
-License
+
+---
+
+## License
 
 This project is open-source and available under the MIT License.
+
+---
+
+## Database Seed Information
+
+### Admin User:
+- **Email**: `admin@example.com`
+- **Password**: `password`
+
+### Normal User:
+- **Email**: `test@example.com`
+- **Password**: `password`
